@@ -23,3 +23,23 @@ mkdir ai-doc-assistant && cd ai-doc-assistant
 
 python3 -m venv venv
 source venv/bin/activate        # Mac/Linux
+
+pip install --upgrade pip
+
+pip install fastapi uvicorn langchain langchain-community langchain-ollama faiss-cpu pypdf python-multipart
+
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+
+ollama pull llama3
+ollama pull nomic-embed-text
+ollama list
+
+ai-doc-assistant/
+│
+├── main.py
+├── requirements.txt
+├── data/          # uploaded documents
+├── indexes/       # FAISS vector indexes
+└── venv/
