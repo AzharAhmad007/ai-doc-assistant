@@ -1,30 +1,25 @@
-AI Document Assistant —
-Environment Setup:-
+# 🤖 AI Document Assistant — Quick Rebuild Reference
+
+A lightweight **AI-powered document assistant** built using **FastAPI + LangChain + Ollama + FAISS**.  
+It allows you to upload documents, embed them, and query them using local LLMs.
+
+---
+
+## 🚀 Features
+
+- 📄 Multi-document upload (PDF supported)
+- 🔍 Semantic search using FAISS vector store
+- 🧠 Local LLM inference via Ollama
+- ⚡ FastAPI backend with Swagger UI
+- 🔁 Easy environment rebuild using `requirements.txt`
+
+---
+
+## 🛠️ Environment Setup
+
+### 1️⃣ Create project folder
+```bash
 mkdir ai-doc-assistant && cd ai-doc-assistant
+
 python3 -m venv venv
 source venv/bin/activate        # Mac/Linux
-pip install --upgrade pip
-
-
-Install Dependencies:-
-pip install fastapi uvicorn langchain langchain-community langchain-ollama faiss-cpu pypdf python-multipart
-pip freeze > requirements.txt   # save after everything works
-Rebuild From requirements.txt Later
-
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-Ollama Setup (one-time system install)
-
-# Download from https://ollama.com, then:
-ollama pull llama3
-ollama pull nomic-embed-text
-ollama list                     # verify
-
-
-mkdir data indexes
-Run Server:- python -m uvicorn main:app --reload --port 8001
-# App:     http://127.0.0.1:8001
-# Swagger: http://127.0.0.1:8001/docs
-
-
